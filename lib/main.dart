@@ -60,7 +60,11 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
     'AI',
     'AIML',
     'DS',
-    'M.TECH INT'
+    'M.TECH INT',
+    'IOT',
+    'ECE',
+    'ME',
+    'CS'
   ];
   final List<String> _genders = ['MALE', 'FEMALE'];
   final List<String> _sections = ['A', 'B', 'C', 'D', 'E'];
@@ -415,7 +419,7 @@ class _FindTeammatePageState extends State<FindTeammatePage> {
   String? _statusMessage;
 
   final List<String> _collegeYears = ['Any','2nd', '3rd', '4th'];
-  final List<String> _branches = ['Any','CSE', 'IT', 'BT', 'AI', 'AIML', 'DS', 'M.TECH INT'];
+  final List<String> _branches = ['Any','CSE', 'IT', 'BT', 'AI', 'AIML', 'DS', 'M.TECH INT','IOT','ECE','ME','CS'];
   final List<String> _genders = ['Any','MALE', 'FEMALE'];
   final List<String> _skills = ['Any','Android Developer','Full Stack Developer','Front-End Developer','Backend Developer','AI/ML Developer',
     'VR Developer','Presenter','Speaker','Designer','BlockChain Developer'];
