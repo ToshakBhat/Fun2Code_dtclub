@@ -42118,7 +42118,7 @@ A.dF(p,$.E_(),!0)
 q=A.Fn(A.ant(new A.kK(p)).gJQ().Gh(null))
 s=$.al()
 r=t.s
-return new A.AK(q,new A.rl(B.hD,s),new A.rl(B.hD,s),new A.rl(B.hD,s),A.b(["2nd","3rd","4th"],r),A.b(["CSE","IT","BT","AI","AIML","DS","M.TECH INT"],r),A.b(["MALE","FEMALE"],r),A.b(["A","B","C","D","E"],r),A.b(["Android Developer","Full Stack Developer","Front-End Developer","Backend Developer","AI/ML Developer","VR Developer","Presenter","Speaker","Designer","BlockChain Developer"],r),B.j)}}
+return new A.AK(q,new A.rl(B.hD,s),new A.rl(B.hD,s),new A.rl(B.hD,s),A.b(["2nd","3rd","4th"],r),A.b(["CSE","IT","BT","AI","AIML","DS","M.TECH INT","IOT","ECE","ME","CS"],r),A.b(["MALE","FEMALE"],r),A.b(["A","B","C","D","E"],r),A.b(["Android Developer","Full Stack Developer","Front-End Developer","Backend Developer","AI/ML Developer","VR Developer","Presenter","Speaker","Designer","BlockChain Developer"],r),B.j)}}
 A.AK.prototype={
 uM(){var s=0,r=A.O(t.H),q=this,p,o,n
 var $async$uM=A.P(function(a,b){if(a===1)return A.L(b,r)
@@ -42332,7 +42332,7 @@ A.mZ.prototype={
 aj(){var s=$.vH,r=(s==null?$.vH=$.aii():s).DB("[DEFAULT]")
 A.dF(r,$.E_(),!0)
 s=t.s
-return new A.AM(A.Fn(A.ant(new A.kK(r)).gJQ().Gh(null)),A.b([],t.H7),A.b(["Any","2nd","3rd","4th"],s),A.b(["Any","CSE","IT","BT","AI","AIML","DS","M.TECH INT"],s),A.b(["Any","MALE","FEMALE"],s),A.b(["Any","Android Developer","Full Stack Developer","Front-End Developer","Backend Developer","AI/ML Developer","VR Developer","Presenter","Speaker","Designer","BlockChain Developer"],s),B.j)}}
+return new A.AM(A.Fn(A.ant(new A.kK(r)).gJQ().Gh(null)),A.b([],t.H7),A.b(["Any","2nd","3rd","4th"],s),A.b(["Any","CSE","IT","BT","AI","AIML","DS","M.TECH INT","IOT","ECE","ME","CS"],s),A.b(["Any","MALE","FEMALE"],s),A.b(["Any","Android Developer","Full Stack Developer","Front-End Developer","Backend Developer","AI/ML Developer","VR Developer","Presenter","Speaker","Designer","BlockChain Developer"],s),B.j)}}
 A.AM.prototype={
 uZ(){var s=0,r=A.O(t.H),q=1,p,o=this,n,m,l,k,j,i,h,g,f
 var $async$uZ=A.P(function(a,b){if(a===1){p=b
