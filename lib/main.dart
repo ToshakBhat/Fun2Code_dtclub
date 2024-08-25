@@ -74,14 +74,22 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
   void _checkEmail() async {
     String email = _emailController.text;
     if (email.toLowerCase().contains('@niet.co.in')) {
-      final splitted_email = email.split('@');
-      String final_email = splitted_email[0].toLowerCase();
-      DataSnapshot snapshot = await _databaseRef.child('users/$final_email')
-          .get();
-      if (snapshot.exists) {
-        _promptPassword(final_email, snapshot);
+      final splittedEmail = email.split('@');
+      String localPart = splittedEmail[0].toLowerCase();
+
+      // Check if the first 4 characters are digits and the last 3 characters are digits, with any characters in between
+      RegExp emailPattern = RegExp(r'^\d{4}.*\d{3}$');
+      if (emailPattern.hasMatch(localPart)) {
+        DataSnapshot snapshot = await _databaseRef.child('users/$localPart').get();
+        if (snapshot.exists) {
+          _promptPassword(localPart, snapshot);
+        } else {
+          _promptNewUserDetails(localPart);
+        }
       } else {
-        _promptNewUserDetails(final_email);
+        setState(() {
+          _statusMessage = "Email must be the same assigned by your college";
+        });
       }
     } else {
       setState(() {
@@ -89,6 +97,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
       });
     }
   }
+
 
   void _promptPassword(String email, DataSnapshot snapshot) {
     showDialog(
@@ -339,7 +348,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: 'Enter your college email (should include niet.co.in)',
+                  hintText: 'Enter your college email (must include niet.co.in)',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -467,6 +476,7 @@ class _FindTeammatePageState extends State<FindTeammatePage> {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: email,
+      query: 'subject=Invitation%20to%20Join%20My%20Team&body=Hey%20there,%20let\'s%20team%20up%20for%20Smart%20India%20Hackathon%202024',
     );
 
     if (await canLaunchUrl(emailLaunchUri)) {
@@ -476,12 +486,14 @@ class _FindTeammatePageState extends State<FindTeammatePage> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Find A Teammate',
+          'Find a Teammate',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 248, 245, 209),
