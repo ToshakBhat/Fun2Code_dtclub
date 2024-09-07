@@ -42150,7 +42150,7 @@ A.asS(new A.abk(this,b),s,t.z)},
 a7t(a){var s=this.c
 s.toString
 A.asS(new A.abg(this,new A.bp(null,t.am),a),s,t.z)},
-L(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=null,f=A.bg("Find My Team for SMART INDIA HACKATHON (SIH) !",g,g,g,A.d0(g,g,g,g,g,g,g,g,g,g,g,g,g,g,B.c1,g,g,!0,g,g,g,g,g,g,g,g),g,g)
+L(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=null,f=A.bg("Find My Team for Hackathon!",g,g,g,A.d0(g,g,g,g,g,g,g,g,g,g,g,g,g,g,B.c1,g,g,!0,g,g,g,g,g,g,g,g),g,g)
 f=A.ama(A.T(255,248,245,209),f)
 s=A.cY(g,30,g)
 r=A.bg("Welcome to the Team Finder!",g,g,g,A.d0(g,g,g,g,g,g,g,g,g,g,g,24,g,g,B.c1,g,g,!0,g,g,g,g,g,g,g,g),B.cf,g)
@@ -42171,7 +42171,7 @@ B.b.P(j,A.b([A.aja(s,new A.abm(a),A.ajb(g,g,r,g,g,g,g,g,g,g,g,g,new A.aw(0,15,0,
 if(s!=null)B.b.P(j,A.b([A.cY(g,20,g),A.bg(s,g,g,g,A.d0(g,g,B.Il,g,g,g,g,g,g,g,g,16,g,g,g,g,g,!0,g,g,g,g,g,g,g,g),B.cf,g)],i))
 j.push(A.cY(g,50,g))
 j.push(new A.FQ(B.m4,g))
-j.push(A.bg("Designed and Developed by Design Thinking Club",g,g,g,A.d0(g,g,B.dJ,g,g,g,g,g,g,g,g,16,B.E4,g,g,g,g,!0,g,g,g,g,g,g,g,g),B.cf,g))
+j.push(A.bg("For any query...Contact : toshakbhat@gmail.com",g,g,g,A.d0(g,g,B.dJ,g,g,g,g,g,g,g,g,16,B.E4,g,g,g,g,!0,g,g,g,g,g,g,g,g),B.cf,g))
 return A.ape(f,A.app(new A.cO(B.mr,A.uT(j,B.iI,B.bS,B.fT),g)))}}
 A.aaR.prototype={
 $0(){this.a.at="Email must be the same assigned by your college"},
@@ -42384,7 +42384,7 @@ return A.N($async$uZ,r)},
 qv(a){return this.a5d(a)},
 a5d(a){var s=0,r=A.O(t.H),q
 var $async$qv=A.P(function(b,c){if(b===1)return A.L(c,r)
-while(true)switch(s){case 0:q=A.S6(null,a,"subject=Invitation%20to%20Join%20My%20Team&body=Hey%20there,%20let's%20team%20up%20for%20Smart%20India%20Hackathon%202024",null,"mailto")
+while(true)switch(s){case 0:q=A.S6(null,a,"subject=Invitation%20to%20Join%20My%20Team&body=Hey%20there,%20let's%20team%20up%20for%20Hackathon",null,"mailto")
 s=5
 return A.V(A.akR(q),$async$qv)
 case 5:s=c?2:4

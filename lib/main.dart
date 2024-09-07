@@ -321,7 +321,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Find My Team for SMART INDIA HACKATHON (SIH) !',
+          'Find My Team for Hackathon!',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 248, 245, 209),
@@ -401,7 +401,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
               SizedBox(height: 50),
               Divider(color: Colors.grey[300]),
               Text(
-                'Designed and Developed by Design Thinking Club',
+                'For any query...Contact : toshakbhat@gmail.com',
                 style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic, color: Colors.grey[600]),
                 textAlign: TextAlign.center,
               ),
@@ -476,7 +476,7 @@ class _FindTeammatePageState extends State<FindTeammatePage> {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: email,
-      query: 'subject=Invitation%20to%20Join%20My%20Team&body=Hey%20there,%20let\'s%20team%20up%20for%20Smart%20India%20Hackathon%202024',
+      query: 'subject=Invitation%20to%20Join%20My%20Team&body=Hey%20there,%20let\'s%20team%20up%20for%20Hackathon',
     );
 
     if (await canLaunchUrl(emailLaunchUri)) {
