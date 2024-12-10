@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -49,6 +50,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
   String? _gender;
   String? _section;
   String? _skill;
+  String? _userEmail;
 
   String? _statusMessage;
 
@@ -71,6 +73,37 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
   final List<String> _skills = ['Android Developer','Full Stack Developer','Front-End Developer','Backend Developer','AI/ML Developer',
     'VR Developer','Presenter','Speaker','Designer','BlockChain Developer'];
 
+
+  Future<User?> signInWithMicrosoft() async {
+    try {
+      // Trigger the sign-in flow
+      final FirebaseAuth auth = FirebaseAuth.instance;
+      UserCredential userCredential = await auth.signInWithPopup(
+        MicrosoftAuthProvider(),
+      );
+
+      // Get the signed-in user
+      User? user = userCredential.user;
+      setState(() {
+        _userEmail = user!.email!;
+        _emailController.text = _userEmail!;
+      });
+      if (user != null) {
+        print("Signed in as: ${user.displayName}, ${user.email}");
+      }
+
+      return user;
+    } catch (e) {
+      print("Error during Microsoft sign-in: $e");
+      return null;
+    }
+  }
+
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
+    print("User signed out!");
+  }
+
   void _checkEmail() async {
     String email = _emailController.text;
     if (email.toLowerCase().contains('@niet.co.in')) {
@@ -82,8 +115,14 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
       if (emailPattern.hasMatch(localPart)) {
         DataSnapshot snapshot = await _databaseRef.child('users/$localPart').get();
         if (snapshot.exists) {
+          setState(() {
+            _statusMessage = "working 1";
+          });
           _promptPassword(localPart, snapshot);
         } else {
+          setState(() {
+            _statusMessage = "working 2";
+          });
           _promptNewUserDetails(localPart);
         }
       } else {
@@ -348,7 +387,8 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: 'Enter your college email (must include niet.co.in)',
+                  hintText: _userEmail == null ? 'Enter your college email (must include niet.co.in)' : _userEmail,
+                  enabled: false,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -359,10 +399,10 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _checkEmail,
-                child: Text('Sign In'),
+                onPressed: _userEmail == null ? signInWithMicrosoft : _checkEmail,
+                child: _userEmail == null ? Text('Sign Up') : Text('Log In'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 183, 246, 141),
+                  backgroundColor: _userEmail == null ? Color.fromARGB(255, 183, 246, 141) : Color.fromARGB(255, 248, 245, 209),
                   padding: EdgeInsets.symmetric(vertical: 15),
                   textStyle: TextStyle(fontSize: 16),
                   shape: RoundedRectangleBorder(
